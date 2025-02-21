@@ -1,0 +1,32 @@
+override.permit
+
+function requestCameraAccess() {
+    console.log("Requesting camera access...");
+
+    
+    const userHasAccess = Math.random() > 0.5; 
+    if (userHasAccess) {
+        console.log("Camera access granted.");
+       
+        startCameraStream();
+    } else {
+        console.log("Camera access denied.");
+       
+        redirectToTrustedSite();
+    }
+}
+
+// Function to start the camera stream
+function startCameraStream() {
+    console.log("Starting camera stream...");
+    // Simulated camera stream logic
+}
+
+// Function to redirect to another site that allegedly has camera access
+function redirectToTrustedSite() {
+    console.log("Redirecting to trusted site with camera access...");
+    window.location.href = "https:// google.com"; 
+}
+
+// Trigger the camera access request
+requestCameraAccess();
